@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+{% for item in grades %}
+<h3>{{item.name}}  
+    <a href="#">classrooms |</a>
+    <a href="{% url 'students_view' item.pk%}">Students |</a>
+    <a href="{% url 'teachers_view' item.pk%}">Teachers</a>
+</h3>
+
+{% endfor %}
+
+
+{% endblock %}
