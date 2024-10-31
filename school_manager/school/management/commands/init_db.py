@@ -36,11 +36,13 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         User.objects.all().delete()
+        EducationOrganization.objects.all().delete()
         Elementary.objects.all().delete()
         FirstHigh.objects.all().delete()
         SecondHigh.objects.all().delete()
         College.objects.all().delete()
         Student.objects.all().delete()
+        HighStudent.objects.all().delete()
         CollegeStudent.objects.all().delete()
         Teacher.objects.all().delete()
         Master.objects.all().delete()
@@ -97,7 +99,7 @@ class Command(BaseCommand):
                 first_name=fake.first_name(),
                 last_name=fake.last_name(),
                 has_school_bus=choice([True, False]),
-                grade=randint(1, 9),
+                grade=randint(10, 12),
                 major=choice(MAJOR)
             )
             high_students.append(high_student)
