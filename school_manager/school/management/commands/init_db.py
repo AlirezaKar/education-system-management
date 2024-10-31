@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 from school.models import (
+    EducationOrganization,
     Elementary,
     FirstHigh,
     HighStudent,
@@ -204,3 +205,15 @@ class Command(BaseCommand):
         #         snacks=choices(snacks)
         #     )
         #     vending_machines.append(vending_machine)
+
+        education_organizations = []
+        for i in tqdm(range(1, 6), 'Creating EducationOrganization'):
+            education_organization = EducationOrganization.objects.create(
+                name = fake.name(),
+                description = fake.text(),
+                gender = choice(['Boys Only', 'Girls Only', 'Mixed']),
+                year_of_foundation = fake.date_between(start_date='-30y', end_date='today'),
+                school_type = choice(['Private', 'Public', 'SAMPAD', 'Heyat omanayee']),
+                education_level = choices(['Elementary', 'Junior High', 'Senior High', 'College'])
+            )
+            education_organizations.append(education_organization)
