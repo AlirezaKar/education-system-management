@@ -1,10 +1,37 @@
 from django.urls import path
-# from .views import school_homepage, grades_view, students_view, teachers_view
+from school.views import (api_view, 
+                          home,
+                          education_organization_view,
+                          student_view,
+                          teacher_view,
+                          master_view,
+                          class_room_view,
+                          high_student_view,
+                          college_student_view,
+                          elementary_view,
+                          first_high_view,
+                          second_high_view,
+                          college_view,
+                          snack_view,
+                          vending_machine_view,
+                          shop_view,
+                          )
 
 urlpatterns = [
-    # path('', school_homepage, name='school_homepage'),
-    # path('grades/', grades_view, name='grades_view'),
-    # path('<int:pk>/teachers', teachers_view, name='teachers_view'),
-    # path('<int:pk>/students', students_view, name='students_view'),
-
+    path('', home, name='home'),
+    path('api/', api_view, name='api_view'),
+    path('education-organization/', education_organization_view, name='education_organization_view'),
+    path('student/', student_view, name='student_view'),
+    path('teacher/', teacher_view, name='teacher_view'),
+    path('master/', master_view, name='master_view'),
+    path('class-room/', class_room_view, name='class_room_view'),
+    path('high-student/', high_student_view, name='high_student_view'),
+    path('college-student/', college_student_view, name='college_student_view'),
+    path('elementary/', elementary_view, name='elementary_view'),
+    path('first-high/', first_high_view, name='first_high_view'),
+    path('second-high/', second_high_view, name='second_high_view'),
+    path('college/', college_view, name='college_view'),
+    path('shop/', shop_view, name='shop_view'),
+    path('snack/', snack_view, name='snack_view'),
+    path('vending-machine/', vending_machine_view, name='vending_machine_view'),
 ]
