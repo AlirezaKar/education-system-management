@@ -1,6 +1,7 @@
 End-User experience:
 django==5.1.2 |
-djangorestframework==3.15.2
+djangorestframework==3.15.2 | 
+requests==2.32.3
 
 Developer experience:
 tqdm==4.66.5 | 
