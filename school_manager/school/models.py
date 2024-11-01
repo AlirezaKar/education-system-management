@@ -83,13 +83,6 @@ class ClassRoom(models.Model):
     def __str__(self):
         return self.name
 
-# class Grade(models.Model):
-#     name = models.CharField(max_length=10, null=True)
-#     class_rooms = models.ManyToManyField(ClassRoom)
-
-#     def __str__(self):
-#         return self.name
-    
 class Elementary(models.Model):
     grade = models.CharField(max_length=2, null=True)
     class_room = models.ManyToManyField(ClassRoom)
@@ -149,3 +142,11 @@ class VendingMachine(models.Model):
 
     def __str__(self):
         return str(self.shopkeeper)
+    
+# class Grade(models.Model):
+#     name = models.CharField(max_length=10, null=True)
+#     class_rooms = models.ManyToManyField(ClassRoom)
+
+#     def __str__(self):
+#         return self.name
+    
